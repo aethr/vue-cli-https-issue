@@ -2,9 +2,12 @@ const path = require('path');
 
 module.exports = {
     devServer: {
-        https: {
-            key: path.resolve(process.env.HTTPS_KEY),
-            cert: path.resolve(process.env.HTTPS_CERT),
+        server: {
+            type: 'https',
+            options: {
+                key: path.resolve(process.env.HTTPS_KEY),
+                cert: path.resolve(process.env.HTTPS_CERT),
+            },
         },
     },
 };
